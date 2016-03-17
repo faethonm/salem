@@ -1,9 +1,32 @@
-<h1> <%= @social_info.email %></h1>
-<!-- <p> <%= @social_info.information%> </p> -->
-<%= render 'contact_info' %>
-<%= render 'demographics' %>
+<h3 class="purple-text text-lighten 3"> Showing results for <%= @social_info.email %></h3>
+<div class="row">
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tab col s3 ">
+        <a class="active purple-text text-lighten 3"" href="#test1">Contact Info</a>
+      </li>
+      <li class="tab col s3">
+        <a class= "purple-text text-lighten 3" href="#test2">Social Accounts</a>
+      </li>
+    </ul>
+  </div>
+  <div id="test1" class="col s12">
+    <%= render 'contact_info' %>
+    
+  </div>
+  <div id="test2" class="col s12">
+    <div class="card">
+      <div class="card-content ">
+        <ul class="collection">
+          <% @social_profiles.each do |social_profile| %>
+            <%= render partial:'social_profile' ,locals: {social_profile: social_profile} %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% @social_profiles.each do |social_profile| %>
-  <%= render partial:'social_profile' , locals: {social_profile: social_profile} %>
-<% end %>
+
+
 
