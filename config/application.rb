@@ -30,6 +30,10 @@ module RailsTemplate
 
     config.autoload_paths += %w(\#{config.root}/lib)
 
+    FullContact.configure do |config|
+      config.api_key = "55d90b2d8aef7246"
+    end
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end

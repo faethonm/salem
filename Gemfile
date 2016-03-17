@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'materialize-sass'
+gem 'fullcontact'
 gem 'devise'
 
 group :development do

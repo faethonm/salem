@@ -1,3 +1,4 @@
+require 'validator'
 class SocialInfosController < ApplicationController
 
   def show
@@ -10,7 +11,9 @@ class SocialInfosController < ApplicationController
 
   def create
     @social_info = SocialInfo.create(info_params)
-    @social_info.update_attribute(:information, 'hello')
+    validator = Validator.new
+    information = validator.find_social_info(info_params[:email])
+    @social_info.update_attribute(:information, information)
     if @social_info.save
       flash[:sucess]= 'Found social information'
       redirect_to @social_info
