@@ -1,0 +1,11 @@
+<%= form_for(@social_info) do |f| %>
+  <div class="row">
+        <div class="input-field col s6 offset-s3">
+          <%= f.label :email %>
+          <%= f.email_field :email,class:"validate" %>
+        </div>
+      </div>
+  <div>
+    <%= f.submit "Find email", class: "btn-large waves-effect waves-light purple lighten-2" %>
+  </div>
+<% end %>

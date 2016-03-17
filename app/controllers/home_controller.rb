@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
-  before_action :authenticate_user!, only: [:contact]
   def index
+    @social_info = SocialInfo.new
   end
 
   def contact
