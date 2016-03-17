@@ -1,2 +1,9 @@
 <h1> <%= @social_info.email %></h1>
-<p> <%= @social_info.information%> </p>
+<!-- <p> <%= @social_info.information%> </p> -->
+<%= render 'contact_info' %>
+<%= render 'demographics' %>
+
+<% @social_profiles.each do |social_profile| %>
+  <%= render partial:'social_profile' , locals: {social_profile: social_profile} %>
+<% end %>
+
