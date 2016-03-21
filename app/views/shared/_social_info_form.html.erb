@@ -1,6 +1,7 @@
 <%= form_for(@social_info) do |f| %>
   <div class="row">
         <div class="input-field col s6 offset-s3">
+        <%= render 'shared/error_messages' %>
           <%= f.label :email %>
           <%= f.email_field :email,class:"validate" %>
         </div>

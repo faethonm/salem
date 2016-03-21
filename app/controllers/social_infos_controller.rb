@@ -4,8 +4,8 @@ class SocialInfosController < ApplicationController
   def show
     @social_info = SocialInfo.find(params[:id])
     information = @social_info.information
-    @contact_info = information.contact_info
-    if @contact_info
+    if information
+      @contact_info = information.contact_info
       @demographics = information.demographics
       type_photos = information.photos && information.photos.group_by{|p| p.type_id}
       @social_profiles = information.social_profiles.map do |sp|
@@ -27,7 +27,6 @@ class SocialInfosController < ApplicationController
   end
 
   def create
-    
     @social_info = SocialInfo.find_by(email: info_params[:email])
     if @social_info
       redirect_to @social_info

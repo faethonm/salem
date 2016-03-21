@@ -1,0 +1,12 @@
+<% if @social_info.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@social_info.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @social_info.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
