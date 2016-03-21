@@ -4,22 +4,10 @@ class SocialInfosController < ApplicationController
   def show
     @social_info = SocialInfo.find(params[:id])
     information = @social_info.information
-    if information
-      @contact_info = information.contact_info
-      @demographics = information.demographics
-      type_photos = information.photos && information.photos.group_by{|p| p.type_id}
-      @social_profiles = information.social_profiles.map do |sp|
-        photo = type_photos && type_photos[sp.type_id]
-        {
-          social_profile: sp,
-          photo: photo && photo.first.url
-        }
-      end
-      @primary_photo = information.photos && information.photos.find{|p| p.is_primary}.url
-    else
-      flash['success'] = 'Not enough info available'
-      render 'new'
-    end
+    @contact_info = @social_info.contact_info
+    @demographics = @social_info.demographics
+    @social_profiles = @social_info.social_profiles
+    @primary_photo = @social_info.primary_photo
   end
 
   def new
@@ -32,16 +20,11 @@ class SocialInfosController < ApplicationController
       redirect_to @social_info
       return
     else
-      @social_info = SocialInfo.create(info_params)
-      validator = Validator.new
-      information = validator.find_social_info(info_params[:email])
-      @social_info.update_attribute(:information, information)
+      @social_info = SocialInfo.new(info_params)
       if @social_info.save
-        flash[:sucess] = 'Found social information'
         redirect_to @social_info
       else
-        flash[:sucess] = 'Couldnt find info'
-        render 'new'
+        render 'home/index'
       end
     end
   end
@@ -49,6 +32,6 @@ class SocialInfosController < ApplicationController
   private
 
   def info_params
-    params.require(:social_info).permit(:email, :information)
+    params.require(:social_info).permit(:email)
   end
 end

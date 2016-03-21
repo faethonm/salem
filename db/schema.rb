@@ -16,8 +16,12 @@ ActiveRecord::Schema.define(version: 20160317035212) do
   create_table "social_infos", force: :cascade do |t|
     t.string   "email"
     t.string   "information"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "contact_info"
+    t.string   "demographics"
+    t.string   "social_profiles"
+    t.string   "primary_photo"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

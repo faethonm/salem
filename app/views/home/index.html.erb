@@ -3,7 +3,7 @@
       
       <h1 class="header center purple-text text-lighten-2">Stalker</h1>
       <div class="row center">
-        <h5 class="header col s12 light"><%=@searches%> emails searched so far </h5>
+        <h5 class="header col s12 light"><%= pluralize((@searches || 0),'email' )%>  searched so far </h5>
 
       </div>
       <div class="row center">
