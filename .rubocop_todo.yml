@@ -115,3 +115,6 @@ Style/SpaceInsideBrackets:
 # Cop supports --auto-correct.
 Style/UnneededPercentQ:
   Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false

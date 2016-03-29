@@ -30,6 +30,7 @@ group :development, :test do
   gem 'rubocop'
   gem 'yarjuf'
   gem 'rspec_junit_formatter'
+
 end
 
 group :test do
@@ -38,6 +39,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'database_cleaner'
   gem 'simplecov', :require => false
+  gem 'simplecov-csv', :require => false
 end
 
 group :production do

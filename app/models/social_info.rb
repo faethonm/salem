@@ -22,13 +22,13 @@ class SocialInfo < ActiveRecord::Base
           photo: photo && photo.first.url
         }
       end
-      self.primary_photo = information.photos && information.photos.find { |p| p.is_primary }.url
+      self.primary_photo = information.photos && information.photos.find(&:is_primary).url
     end
   end
 
   private
 
   def type_photos
-    information.photos && information.photos.group_by { |p| p.type_id }
+    information.photos && information.photos.group_by(&:p.type_id)
   end
 end

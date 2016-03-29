@@ -6,6 +6,12 @@ require 'devise'
 require 'capybara/rspec'
 
 require 'simplecov'
+require 'simplecov-csv'
+SimpleCov.coverage_dir('shippable/codecoverage')
+SimpleCov.formatters = [
+  SimpleCov::Formatter::HTMLFormatter,
+  SimpleCov::Formatter::CSVFormatter
+]
 SimpleCov.start do
   add_filter '/config/'
   add_filter '/spec/'

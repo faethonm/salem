@@ -12,3 +12,4 @@ before_script:
 script:
   - rspec -f RspecJunitFormatter -o shippable/testresults/results.xml
   - rubocop
+cache: true

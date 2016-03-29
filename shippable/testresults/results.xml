@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="12" failures="0" errors="0" time="0.343636" timestamp="2016-03-29T14:38:12-07:00">
-  <!-- Randomized with seed 16876 -->
+<testsuite name="rspec" tests="12" failures="0" errors="0" time="3.979482" timestamp="2016-03-29T16:06:54-07:00">
+  <!-- Randomized with seed 63698 -->
   <properties/>
-  <testcase classname="spec.models.user_spec" name="User should be valid" file="./spec/models/user_spec.rb" time="0.032890"/>
-  <testcase classname="spec.models.user_spec" name="User should respond to #email" file="./spec/models/user_spec.rb" time="0.005641"/>
-  <testcase classname="spec.models.user_spec" name="User should validate that :email cannot be empty/falsy" file="./spec/models/user_spec.rb" time="0.010242"/>
-  <testcase classname="spec.requests.users_spec" name="Users GET / displays the home page" file="./spec/requests/users_spec.rb" time="0.209221"/>
-  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #demographics" file="./spec/models/social_info_spec.rb" time="0.004913"/>
-  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #email" file="./spec/models/social_info_spec.rb" time="0.003036"/>
-  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #social_profiles" file="./spec/models/social_info_spec.rb" time="0.003334"/>
-  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #information" file="./spec/models/social_info_spec.rb" time="0.003110"/>
-  <testcase classname="spec.models.social_info_spec" name="SocialInfo should be valid" file="./spec/models/social_info_spec.rb" time="0.003554"/>
-  <testcase classname="spec.models.social_info_spec" name="SocialInfo should validate that :email cannot be empty/falsy" file="./spec/models/social_info_spec.rb" time="0.004226"/>
-  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #contact_info" file="./spec/models/social_info_spec.rb" time="0.002382"/>
-  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #primary_photo" file="./spec/models/social_info_spec.rb" time="0.002477"/>
+  <testcase classname="spec.models.user_spec" name="User should validate that :email cannot be empty/falsy" file="./spec/models/user_spec.rb" time="0.038966"/>
+  <testcase classname="spec.models.user_spec" name="User should be valid" file="./spec/models/user_spec.rb" time="0.014464"/>
+  <testcase classname="spec.models.user_spec" name="User should respond to #email" file="./spec/models/user_spec.rb" time="0.005201"/>
+  <testcase classname="spec.models.social_info_spec" name="SocialInfo should validate that :email cannot be empty/falsy" file="./spec/models/social_info_spec.rb" time="0.011063"/>
+  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #contact_info" file="./spec/models/social_info_spec.rb" time="0.003378"/>
+  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #primary_photo" file="./spec/models/social_info_spec.rb" time="0.003064"/>
+  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #email" file="./spec/models/social_info_spec.rb" time="0.003950"/>
+  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #demographics" file="./spec/models/social_info_spec.rb" time="0.002880"/>
+  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #social_profiles" file="./spec/models/social_info_spec.rb" time="0.002604"/>
+  <testcase classname="spec.models.social_info_spec" name="SocialInfo should respond to #information" file="./spec/models/social_info_spec.rb" time="0.002615"/>
+  <testcase classname="spec.models.social_info_spec" name="SocialInfo should be valid" file="./spec/models/social_info_spec.rb" time="0.003412"/>
+  <testcase classname="spec.requests.users_spec" name="Users GET / displays the home page" file="./spec/requests/users_spec.rb" time="3.812977"/>
 </testsuite>

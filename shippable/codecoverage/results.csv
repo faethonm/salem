@@ -1,0 +1,4 @@
+File,% covered,Lines,Relevant Lines,Lines covered,Lines missed
+"./app/controllers/application_controller.rb",100,5,2,2,0
+"./app/controllers/social_infos_controller.rb",32,36,22,7,15
+"./lib/validator.rb",25,26,16,4,12
