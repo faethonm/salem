@@ -1,5 +1,3 @@
-
-
 class SocialInfo < ActiveRecord::Base
   serialize :information
   serialize :contact_info
@@ -13,7 +11,7 @@ class SocialInfo < ActiveRecord::Base
 
   def validate_social_information
     validator = Validator.new
-    self.information = validator.find_social_info(self.email)
+    self.information = validator.find_social_info(email)
     if information
       self.contact_info = information.contact_info
       self.demographics = information.demographics
@@ -24,14 +22,13 @@ class SocialInfo < ActiveRecord::Base
           photo: photo && photo.first.url
         }
       end
-      primary_photo = information.photos && information.photos.find{|p| p.is_primary}.url
+      self.primary_photo = information.photos && information.photos.find { |p| p.is_primary }.url
     end
   end
 
   private
 
   def type_photos
-    type_photos = information.photos && information.photos.group_by{|p| p.type_id}
+    information.photos && information.photos.group_by { |p| p.type_id }
   end
-
 end

@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.1.1
+env:
+  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
+before_install:
+ - sudo apt-get -y update
+ - sudo apt-get -y install libpq-dev
+before_script:
+  # ensure the test output and coverage dirs are created
+  - mkdir -p shippable/testresults
+script:
+  - rspec -f RspecJunitFormatter -o shippable/testresults/results.xml
+  - rubocop

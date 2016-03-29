@@ -27,6 +27,9 @@ group :development, :test do
   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
   gem 'launchy'
   gem "rspec-rails"
+  gem 'rubocop'
+  gem 'yarjuf'
+  gem 'rspec_junit_formatter'
 end
 
 group :test do

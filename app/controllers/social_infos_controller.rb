@@ -1,9 +1,8 @@
 require 'validator'
 class SocialInfosController < ApplicationController
-
   def show
     @social_info = SocialInfo.find(params[:id])
-    information = @social_info.information
+    @information = @social_info.information
     @contact_info = @social_info.contact_info
     @demographics = @social_info.demographics
     @social_profiles = @social_info.social_profiles

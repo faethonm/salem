@@ -1,15 +1,13 @@
-require "fullcontact"
+require 'fullcontact'
 
 class Validator
-
   def find_valid_emails(permutator, emails)
     valid_emails = []
     emails.each do |email|
       begin
         result = FullContact.person(email: email)
-        if result.status ==202
-          debugger
-          puts "Please wait for 2 minutes and try again"
+        if result.status == 202
+          puts 'Please wait for 2 minutes and try again'
         else
           puts "#{email} valid"
           valid_email = permutator.valid_emails.create(email: email, information: result)
@@ -23,10 +21,6 @@ class Validator
   end
 
   def find_social_info(email)
-    begin
-      FullContact.person(email: email)
-    rescue FullContact::NotFound
-      puts "#{email} not valid"
-    end
+    FullContact.person(email: email)
   end
 end
