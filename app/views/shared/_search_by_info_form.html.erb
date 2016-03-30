@@ -1,0 +1,30 @@
+<%= form_tag(search_by_info_path) do |f| %>
+  <div class="row">
+  </div>
+  <div class="row">
+    <div class="input-field col s6 offset-s3">
+      <%= label_tag :first_name %>
+      <%= text_field_tag :first_name %>
+    </div>
+    <div class="input-field col s6 offset-s3">
+      <%= label_tag :last_name %>
+      <%= text_field_tag :last_name %>
+    </div>
+    <div class="input-field col s6 offset-s3">
+      <%= label_tag :middle_name %>
+      <%= text_field_tag :middle_name %>
+    </div>
+    <div class="input-field col s6 offset-s3">
+      <%= label_tag :company_name %>
+      <%= text_field_tag :company_name %>
+    </div>
+    <div class="input-field col s6 offset-s3">
+      <%= label_tag :company_domain %>
+      <%= text_field_tag :company_domain %>
+    </div>
+  </div>
+  <div>
+    <%= link_to "Back", root_url, class: "btn-large waves-effect waves-light purple lighten-2" %>
+    <%= submit_tag "Stalk using info", class: "btn-large waves-effect waves-light purple lighten-2" %>
+  </div>
+<% end %>

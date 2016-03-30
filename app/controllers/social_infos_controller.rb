@@ -33,4 +33,7 @@ class SocialInfosController < ApplicationController
   def info_params
     params.require(:social_info).permit(:email)
   end
+
+  def find_emails(emails)
+    Validator.new.find_valid_emails(emails)
 end

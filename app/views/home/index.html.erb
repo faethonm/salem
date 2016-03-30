@@ -8,7 +8,8 @@
       </div>
       <div class="row center">
         <div class="col-s12 offset-s3">
-          <%= render 'shared/social_info_form' %>
+          <%= link_to 'Stalk using email' ,find_by_email_path, id: 'usingEmail',class: "btn-large waves-effect waves-light purple lighten-2" %>
+          <%= link_to 'Stalk using personal info' ,find_by_info_path,class: "btn-large waves-effect waves-light purple lighten-2" %>
         </div>
       </div>
     </div>
@@ -39,7 +40,6 @@
           <div class="icon-block">
             <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
             <h5 class="center">Find contacts using just the email</h5>
-
             <p class="light"></p>
           </div>
         </div>
@@ -61,3 +61,4 @@
 
     </div>
   </div>
+  
