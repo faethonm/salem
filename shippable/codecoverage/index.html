@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-29T19:56:56-07:00">2016-03-29T19:56:56-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-29T20:18:26-07:00">2016-03-29T20:18:26-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -53,7 +53,7 @@
       <tr>
         <td class="strong"><a href="#c1b9161f2b1093526118b67b72ba6fdf4d4d959c" class="src_link" title="app/controllers/social_infos_controller.rb">app/controllers/social_infos_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>39</td>
+        <td>80</td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
@@ -138,7 +138,7 @@
       <tr>
         <td class="strong"><a href="#c1b9161f2b1093526118b67b72ba6fdf4d4d959c" class="src_link" title="app/controllers/social_infos_controller.rb">app/controllers/social_infos_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>39</td>
+        <td>80</td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
@@ -458,67 +458,67 @@
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">    @social_info = SocialInfo.find_by(email: info_params[:email])</code>
+          <code class="ruby">    debugger</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">    if @social_info</code>
+          <code class="ruby">    @social_info = SocialInfo.find_by(email: info_params[:email])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">      redirect_to @social_info</code>
+          <code class="ruby">    if @social_info</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">      return</code>
+          <code class="ruby">      redirect_to @social_info</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    else</code>
+          <code class="ruby">      return</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">      @social_info = SocialInfo.new(info_params)</code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">      if @social_info.save</code>
+          <code class="ruby">      @social_info = permutated_email ? create_through_permutator : create_by_email</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">        redirect_to @social_info</code>
+          <code class="ruby">      if @social_info.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">      else</code>
+          <code class="ruby">      redirect_to @social_info</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">        render &#39;home/index&#39;</code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">      render &#39;home/index&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -554,13 +554,13 @@
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby">  def info_params</code>
+          <code class="ruby">  def permutated_email</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">    params.require(:social_info).permit(:email)</code>
+          <code class="ruby">    params[:permutated]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
@@ -578,16 +578,262 @@
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">  def find_emails(emails)</code>
+          <code class="ruby">  def information_params</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby">    Validator.new.find_valid_emails(emails)</code>
+          <code class="ruby">    params.require(:social_info).permit(:email,:information)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">  def email_params</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby">    params.require(:social_info).permit(:email)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby">  def create_through_permutator</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">    @social_info = SocialInfo.new(information_params)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="49">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">  def create_by_email</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby">    information = find_info(email_params[:email])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">    @social_info = SocialInfo.new(email_params.merge(infomation: information))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">  def find_info(email)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">    Validator.new.find_valid_emails([email])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby">    validator = Validator.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">    info_hash = {}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">    @information =  validator.find_social_info(email)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby">    if @information</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">      info_hash[:contact_info] = @information.contact_info</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
+          
+          
+          <code class="ruby">      info_hash[:demographics] = @information.demographics</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">      info_hash[:social_profiles] = @information.social_profiles.map do |sp|</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">        photo = type_photos &amp;&amp; type_photos[sp.type_id]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="66">
+          
+          
+          <code class="ruby">        {</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">          social_profile: sp,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">          photo: photo &amp;&amp; photo.first.url</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">        }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">      info_hash[:primary_photo] = @information.photos &amp;&amp; @information.photos.find(&amp;:is_primary).url</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">    info_hash</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">  def type_photos</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">    @information.photos &amp;&amp; @information.photos.group_by(&amp;:p.type_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
           
           
           <code class="ruby">end</code>

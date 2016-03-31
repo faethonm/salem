@@ -1,4 +1,5 @@
 require 'fullcontact'
+require 'permutator'
 
 class Validator
   def find_valid_emails(emails)
@@ -6,7 +7,6 @@ class Validator
     results = []
     emails.each do |email|
       begin
-        debugger
         result = FullContact.person(email: email)
         results << result
         # if result.status == 202
@@ -26,4 +26,5 @@ class Validator
   def find_social_info(email)
     FullContact.person(email: email)
   end
+
 end

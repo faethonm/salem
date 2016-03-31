@@ -7,7 +7,7 @@ class SocialInfo < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  before_create :validate_social_information
+  # before_create :validate_social_information
 
   def validate_social_information
     validator = Validator.new

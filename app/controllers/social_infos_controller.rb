@@ -14,26 +14,67 @@ class SocialInfosController < ApplicationController
   end
 
   def create
+    debugger
     @social_info = SocialInfo.find_by(email: info_params[:email])
     if @social_info
       redirect_to @social_info
       return
     else
-      @social_info = SocialInfo.new(info_params)
+      @social_info = permutated_email ? create_through_permutator : create_by_email
       if @social_info.save
-        redirect_to @social_info
-      else
-        render 'home/index'
-      end
+      redirect_to @social_info
+    else
+      render 'home/index'
     end
   end
 
   private
 
-  def info_params
+  def permutated_email
+    params[:permutated]
+  end
+
+  def information_params
+    params.require(:social_info).permit(:email,:information)
+  end
+
+  def email_params
     params.require(:social_info).permit(:email)
   end
 
-  def find_emails(emails)
-    Validator.new.find_valid_emails(emails)
+  private
+
+  def create_through_permutator
+    @social_info = SocialInfo.new(information_params)
+  end
+
+  def create_by_email
+    information = find_info(email_params[:email])
+    @social_info = SocialInfo.new(email_params.merge(infomation: information))
+  end
+
+  def find_info(email)
+    Validator.new.find_valid_emails([email])
+    validator = Validator.new
+    info_hash = {}
+    @information =  validator.find_social_info(email)
+    if @information
+      info_hash[:contact_info] = @information.contact_info
+      info_hash[:demographics] = @information.demographics
+      info_hash[:social_profiles] = @information.social_profiles.map do |sp|
+        photo = type_photos && type_photos[sp.type_id]
+        {
+          social_profile: sp,
+          photo: photo && photo.first.url
+        }
+      end
+      info_hash[:primary_photo] = @information.photos && @information.photos.find(&:is_primary).url
+    end
+    info_hash
+  end
+
+  def type_photos
+    @information.photos && @information.photos.group_by(&:p.type_id)
+  end
+
 end
