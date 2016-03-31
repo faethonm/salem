@@ -1,0 +1,20 @@
+<ul class="collection">
+  <% @possible_social_info.each do |social_info| %>
+    <li class="collection-item ">
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-content ">
+              <ul class="collection">
+                <li class="collection-item ">
+                  <%= @social_profile.full_name %>
+                </li>
+                <li class="collection-item"><%= @social_info.email%></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  <%end %>
+</ul>

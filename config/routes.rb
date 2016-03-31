@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'contact' => 'home#contact'
 
-  get 'find_by_email' => 'home#find_by_email'
-  get 'find_by_info' => 'home#find_by_info'
-  post 'search_by_info' => 'permutators#search_by_info'
-  get 'view_permutated' => 'permuatators#view_permutated'
+  resources :permutators
 
 end

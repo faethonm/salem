@@ -2,7 +2,6 @@ class CreateSocialInfos < ActiveRecord::Migration
   def change
     create_table :social_infos do |t|
       t.string :email
-      t.string :information
       t.string :contact_info
       t.string :demographics
       t.string :social_profiles

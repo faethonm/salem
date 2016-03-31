@@ -1,5 +1,4 @@
 class SocialInfo < ActiveRecord::Base
-  serialize :information
   serialize :contact_info
   serialize :demographics
   serialize :social_profiles
@@ -9,9 +8,7 @@ class SocialInfo < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   # before_create :validate_social_information
 
-  def validate_social_information
-    validator = Validator.new
-    self.information = validator.find_social_info(email)
+  def validate_social_information(information)
     if information
       self.contact_info = information.contact_info
       self.demographics = information.demographics

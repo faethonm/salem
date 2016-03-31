@@ -1,4 +1,7 @@
-class Permutator
+class Permutator < ActiveRecord::Base
+  has_many :social_infos
+
+  private
 
   def generate_emails(params)
     @fn = params[:first_name].downcase
