@@ -18,6 +18,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
+  gem 'awesome_print'
 end
 
 group :development, :test do

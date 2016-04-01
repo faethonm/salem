@@ -7,20 +7,31 @@ class PermutatorsController < ApplicationController
   end
 
   def show
+
     @permutator = Permutator.find(params[:id])
-    @permutator.permutated_accounts
+    @contacts = @permutator.social_infos
   end
 
   def create
-    @permutator = Permutator.new
-    permutator = Permutator.new
-    results = permutator.generate_emails(params)
-    validator = Validator.new
-    valid_results = validator.find_valid_emails(results)
-    @possible_social_info = valid_results.map do |result|
-      SocialInfo.create(email: result.email, information: result)
+    @permutator = Permutator.new(permutator_params)
+    if @permutator.save
+      results = @permutator.generate_emails(permutator_params)
+      validator = Validator.new
+      valid_results = validator.find_valid_emails(results)
+      @contacts = valid_results.map do |result|
+        @contact = SocialInfo.new()
+        info_hash = @contact.validate_social_information(result[:information]).merge!({permutator_id: @permutator.id,email: result[:email]})
+        @contact.update_attributes(info_hash)
+        @contact if @contact.save
+      end
+      
+      redirect_to @permutator
+    else
+      render 'new'
     end
   end
+
+  
 
   private
 

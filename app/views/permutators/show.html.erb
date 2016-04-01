@@ -1,0 +1,22 @@
+<% @contacts.each do |contact| %>
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content ">
+          <span class="card-title">
+            <%= link_to contact.contact_info.full_name, contact %></span>
+          <ul class="collection">
+            <li class="collection-item ">
+              <%= contact.contact_info.full_name %>
+            </li>
+            <li class="collection-item"><%= contact.email%></li>
+            <% if contact.demographics %>
+              <li class="collection-item"><%= contact.demographics.gender %></li>
+              <li class="collection-item"><%= (contact.demographics.location_deduced && contact.demographics.location_deduced.deduced_location) || contact.demographics.location_general%></li>
+              <%end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end%>

@@ -2,7 +2,6 @@ require 'validator'
 class SocialInfosController < ApplicationController
   def show
     @social_info = SocialInfo.find(params[:id])
-    @information = @social_info.information
     @contact_info = @social_info.contact_info
     @demographics = @social_info.demographics
     @social_profiles = @social_info.social_profiles
@@ -15,18 +14,18 @@ class SocialInfosController < ApplicationController
 
   def create
     generated_info = email_params[:information] || find_info(email_params[:email])
-    debugger
     @social_info = SocialInfo.find_by(email: email_params[:email])
     if @social_info
       redirect_to @social_info
       return
     else
-      social_info_params = {email: email_params[:email]}.merge(validate_social_information(generated_info))
-      @social_info = @social_info = SocialInfo.new(social_info_params)
+      @social_info = SocialInfo.new
+      social_info_params = {email: email_params[:email]}.merge(@social_info.validate_social_information(generated_info))
+      @social_info.update_attributes(social_info_params)
       if @social_info.save
         redirect_to @social_info
       else
-        render 'home/index'
+        render 'new'
       end
     end
   end
@@ -38,7 +37,7 @@ class SocialInfosController < ApplicationController
   end
 
   def find_info(email)
-    Validator.new.find_social_info(email)
+    Validator.new.find_social_info(email)[:information]
   end
 
   def validate_social_information(information)

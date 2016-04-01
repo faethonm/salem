@@ -1,9 +1,7 @@
 class Permutator < ActiveRecord::Base
-  has_many :social_infos
+  has_many :social_infos, dependent: :destroy
 
-  private
-
-  def generate_emails(params)
+   def generate_emails(params)
     @fn = params[:first_name].downcase
     @ln = params[:last_name].downcase
     @mn = params[:middle_name].downcase
@@ -21,6 +19,8 @@ class Permutator < ActiveRecord::Base
     #   underscores: append_domain(underscores)
     # }
   end
+
+  private
 
   def append_domain(list)
     if @dom.present?

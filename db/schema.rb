@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331201554) do
+ActiveRecord::Schema.define(version: 20160405001310) do
 
   create_table "permutators", force: :cascade do |t|
     t.string   "first_name"
@@ -31,7 +31,10 @@ ActiveRecord::Schema.define(version: 20160331201554) do
     t.string   "primary_photo"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "permutator_id"
   end
+
+  add_index "social_infos", ["permutator_id"], name: "index_social_infos_on_permutator_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

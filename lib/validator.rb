@@ -8,7 +8,7 @@ class Validator
     emails.each do |email|
       begin
         result = FullContact.person(email: email)
-        results << result
+        results << {email: email, information: result}
         # if result.status == 202
         #   puts 'Please wait for 2 minutes and try again'
         # else
