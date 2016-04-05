@@ -1,13 +1,14 @@
 require 'fullcontact'
-require 'permutator'
 
 class Validator
-  def find_valid_emails(emails)
+  def find_valid_emails(emails,permutator)
     # valid_emails = []
+    webhook_url = "http://df6955b2.ngrok.io/permutators/#{permutator.id}/fullcontact_information_received"
+    puts webhook_url
     results = []
     emails.each do |email|
       begin
-        result = FullContact.person(email: email)
+        result = FullContact.person(email: email, webhookBody: 'json', webhookUrl: webhook_url, webhookId: email)
         results << { email: email, information: result }
         puts email
         # if result.status == 202
@@ -25,6 +26,6 @@ class Validator
   end
 
   def find_contact(email)
-    FullContact.person(email: email)
+    FullContact.person(email: email, style: 'dictionary')
   end
 end

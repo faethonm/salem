@@ -10,20 +10,20 @@ class Contact < ActiveRecord::Base
 
   def validate_social_information(information)
     info_hash = {}
-    info_hash[:contact_info] = information.contact_info
-    info_hash[:demographics] = information.demographics
-    info_hash[:social_profiles] = information.social_profiles.map do |sp|
-      photo = type_photos(information) && type_photos(information)[sp.type_id]
+    info_hash[:contact_info] = information['contactInfo']
+    info_hash[:demographics] = information['demographics']
+    info_hash[:social_profiles] = information['socialProfiles'].map do |sp|
+      photo = type_photos(information) && type_photos(information)[sp['typeId']]
       {
         social_profile: sp,
-        photo: photo && photo.first.url
+        photo: photo && photo.first['url']
       }
     end
-    info_hash[:primary_photo] = information.photos && information.photos.find(&:is_primary).url
+    info_hash[:primary_photo] = information['photos'] && information['photos'].find{|p| p['isPrimary']}['url']
     info_hash
   end
 
   def type_photos(information)
-    information.photos && information.photos.group_by(&:type_id)
+    information['photos'] && information['photos'].group_by{|t| t['typeId']}
   end
 end

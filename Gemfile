@@ -14,11 +14,16 @@ gem 'materialize-sass'
 gem 'fullcontact'
 gem 'devise'
 
+gem 'faye'
+gem 'thin', require: false
+gem 'sync'
+  
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
   gem 'awesome_print'
+  
 end
 
 group :development, :test do
@@ -31,7 +36,6 @@ group :development, :test do
   gem 'rubocop'
   gem 'yarjuf'
   gem 'rspec_junit_formatter'
-
 end
 
 group :test do

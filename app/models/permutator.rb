@@ -27,8 +27,8 @@ class Permutator < ActiveRecord::Base
   end
 
   def emails
-    # emails ||= simple + basics + backwards + using_middle_name + dashes + underscores
-    basics
+    simple + basics
+    # basics
   end
 
   def simple
@@ -38,13 +38,13 @@ class Permutator < ActiveRecord::Base
   def basics
     [
      "#{@fn}#{@ln}",
-     "#{@fn}.#{@ln}"
-     # "#{@fi}#{@ln}",
-     # "#{@fi}.#{@ln}",
-     # "#{@fn}#{@li}",
-     # "#{@fn}.#{@li}",
-     # "#{@fi}#{@li}",
-     # "#{@fi}.#{@li}"
+     "#{@fn}.#{@ln}",
+     "#{@fi}#{@ln}",
+     "#{@fi}.#{@ln}",
+     "#{@fn}#{@li}",
+     "#{@fn}.#{@li}",
+     "#{@fi}#{@li}",
+     "#{@fi}.#{@li}"
     ]
   end
 

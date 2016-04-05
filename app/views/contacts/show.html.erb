@@ -1,26 +1,9 @@
 <h3 class="purple-text text-lighten 3"><%= @contact.email %></h3>
 
-<div class="row">
-  <% if @contact_info %>
-    <div id="test1" class="col s12">
-      <%= render 'contact_info' %>
-    </div>
-    <div id="test2" class="col s12">
-      <div class="card">
-        <div class="card-content ">
-          <span class="card-title">Social Information</span>
-          <ul class="collection">
-            <% @social_profiles.each do |social_profile| %>
-              <%= render partial:'social_profile' ,locals: {social_profile: social_profile} %>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <% else %>
-      <%= render 'shared/no_social_information' %>
-    <% end %>
-</div>
+<% unless @by_email %>
+  <%= link_to "Back", @permutator, class: "btn-large waves-effect waves-light purple lighten-2" %>
+<% end %>
+<%= render partial: 'shared/contact' %>
 
 
 
