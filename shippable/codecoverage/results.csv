@@ -1,2 +1,7 @@
 File,% covered,Lines,Relevant Lines,Lines covered,Lines missed
-"./app/controllers/social_infos_controller.rb",100,80,0,0,0
+"./app/controllers/application_controller.rb",100,5,2,2,0
+"./app/controllers/contacts_controller.rb",31,42,26,8,18
+"./app/controllers/home_controller.rb",100,5,3,3,0
+"./app/models/contact.rb",50,29,18,9,9
+"./app/models/permutator.rb",44,113,32,14,18
+"./lib/validator.rb",38,29,13,5,8

@@ -1,12 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe SocialInfo, type: :model do
-  before { @social_info = FactoryGirl.build(:social_info) }
+RSpec.describe Contact, type: :model do
+  before { @contact = FactoryGirl.build(:contact) }
 
-  subject { @social_info }
+  subject { @contact }
 
   it { should respond_to(:email) }
-  it { should respond_to(:information) }
   it { should respond_to(:contact_info) }
   it { should respond_to(:demographics) }
   it { should respond_to(:social_profiles) }

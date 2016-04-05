@@ -1,7 +1,5 @@
-
 require 'validator'
 class PermutatorsController < ApplicationController
-
   def new
     @permutator = Permutator.new
   end
@@ -18,24 +16,24 @@ class PermutatorsController < ApplicationController
       validator = Validator.new
       valid_results = validator.find_valid_emails(results)
       @contacts = valid_results.map do |result|
-        @contact = Contact.new()
-        info_hash = @contact.validate_social_information(result[:information]).merge!({permutator_id: @permutator.id,email: result[:email]})
+        @contact = Contact.new
+        info_params = result[:information].merge!(
+          permutator_id: @permutator.id,
+          email: result[:email]
+        )
+        info_hash = @contact.validate_social_information(info_params)
         @contact.update_attributes(info_hash)
         @contact if @contact.save
       end
-      
       redirect_to @permutator
     else
       render 'new'
     end
   end
 
-  
-
   private
 
   def permutator_params
     params.require(:permutator).permit(:first_name, :last_name, :middle_name, :company_name, :company_domain)
   end
-
 end

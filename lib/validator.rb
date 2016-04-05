@@ -3,12 +3,12 @@ require 'permutator'
 
 class Validator
   def find_valid_emails(emails)
-    valid_emails = []
+    # valid_emails = []
     results = []
     emails.each do |email|
       begin
         result = FullContact.person(email: email)
-        results << {email: email, information: result}
+        results << { email: email, information: result }
         # if result.status == 202
         #   puts 'Please wait for 2 minutes and try again'
         # else
@@ -26,5 +26,4 @@ class Validator
   def find_contact(email)
     FullContact.person(email: email)
   end
-
 end

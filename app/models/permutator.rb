@@ -1,7 +1,10 @@
 class Permutator < ActiveRecord::Base
   has_many :contacts, dependent: :destroy
 
-   def generate_emails(params)
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
+  def generate_emails(params)
     @fn = params[:first_name].downcase
     @ln = params[:last_name].downcase
     @mn = params[:middle_name].downcase
@@ -24,19 +27,19 @@ class Permutator < ActiveRecord::Base
 
   def append_domain(list)
     if @dom.present?
-      list.map { |email| email + "@#{@dom}"}
+      list.map { |email| email + "@#{@dom}" }
     else
-      list.map { |email| email + "@#{@company}.com"}
+      list.map { |email| email + "@#{@company}.com" }
     end
   end
 
   def emails
     # emails ||= simple + basics + backwards + using_middle_name + dashes + underscores
-    emails ||= basics
+    basics
   end
 
   def simple
-    ["#{@fn}","#{@ln}"]
+    [@fn, @ln]
   end
 
   def basics
