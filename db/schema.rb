@@ -13,17 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160405001310) do
 
-  create_table "permutators", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "middle_name"
-    t.string   "last_name"
-    t.string   "company_name"
-    t.string   "company_domain"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  create_table "social_infos", force: :cascade do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string   "email"
     t.string   "contact_info"
     t.string   "demographics"
@@ -34,7 +24,17 @@ ActiveRecord::Schema.define(version: 20160405001310) do
     t.integer  "permutator_id"
   end
 
-  add_index "social_infos", ["permutator_id"], name: "index_social_infos_on_permutator_id"
+  add_index "contacts", ["permutator_id"], name: "index_contacts_on_permutator_id"
+
+  create_table "permutators", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "company_name"
+    t.string   "company_domain"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

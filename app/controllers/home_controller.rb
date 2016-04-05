@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @searches = SocialInfo.all.count
+    @searches = Contact.all.count
   end
 end

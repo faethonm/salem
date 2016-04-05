@@ -23,7 +23,7 @@ class Validator
     results.compact
   end
 
-  def find_social_info(email)
+  def find_contact(email)
     FullContact.person(email: email)
   end
 

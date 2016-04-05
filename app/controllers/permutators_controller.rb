@@ -7,9 +7,8 @@ class PermutatorsController < ApplicationController
   end
 
   def show
-
     @permutator = Permutator.find(params[:id])
-    @contacts = @permutator.social_infos
+    @contacts = @permutator.contacts
   end
 
   def create
@@ -19,7 +18,7 @@ class PermutatorsController < ApplicationController
       validator = Validator.new
       valid_results = validator.find_valid_emails(results)
       @contacts = valid_results.map do |result|
-        @contact = SocialInfo.new()
+        @contact = Contact.new()
         info_hash = @contact.validate_social_information(result[:information]).merge!({permutator_id: @permutator.id,email: result[:email]})
         @contact.update_attributes(info_hash)
         @contact if @contact.save

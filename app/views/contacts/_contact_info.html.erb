@@ -7,7 +7,7 @@
           <li class="collection-item ">
             <%= @contact_info.full_name %>
           </li>
-          <li class="collection-item"><%= @social_info.email%></li>
+          <li class="collection-item"><%= @contact.email%></li>
           <% if @demographics %>
             <li class="collection-item"><%= @demographics.gender %></li>
             <li class="collection-item"><%= (@demographics.location_deduced && @demographics.location_deduced.deduced_location) || @demographics.location_general%></li>

@@ -1,5 +1,5 @@
 class Permutator < ActiveRecord::Base
-  has_many :social_infos, dependent: :destroy
+  has_many :contacts, dependent: :destroy
 
    def generate_emails(params)
     @fn = params[:first_name].downcase

@@ -1,15 +1,12 @@
-class SocialInfo < ActiveRecord::Base
+class Contact < ActiveRecord::Base
   serialize :contact_info
   serialize :demographics
   serialize :social_profiles
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }
-  # before_create :validate_social_information
 
   has_one :permutator
-
-
 
   def validate_social_information(information)
     info_hash = {}
