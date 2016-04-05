@@ -4,4 +4,4 @@ File,% covered,Lines,Relevant Lines,Lines covered,Lines missed
 "./app/controllers/home_controller.rb",100,5,3,3,0
 "./app/models/contact.rb",50,29,18,9,9
 "./app/models/permutator.rb",44,113,32,14,18
-"./lib/validator.rb",38,29,13,5,8
+"./lib/validator.rb",36,30,14,5,9

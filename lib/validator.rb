@@ -9,6 +9,7 @@ class Validator
       begin
         result = FullContact.person(email: email)
         results << { email: email, information: result }
+        puts email
         # if result.status == 202
         #   puts 'Please wait for 2 minutes and try again'
         # else

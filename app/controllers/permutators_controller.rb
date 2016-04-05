@@ -17,12 +17,12 @@ class PermutatorsController < ApplicationController
       valid_results = validator.find_valid_emails(results)
       @contacts = valid_results.map do |result|
         @contact = Contact.new
-        info_params = result[:information].merge!(
+        info_hash = @contact.validate_social_information(result[:information])
+        info_params = info_hash.merge!(
           permutator_id: @permutator.id,
           email: result[:email]
         )
-        info_hash = @contact.validate_social_information(info_params)
-        @contact.update_attributes(info_hash)
+        @contact.update_attributes(info_params)
         @contact if @contact.save
       end
       redirect_to @permutator
