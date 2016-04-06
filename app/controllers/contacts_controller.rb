@@ -1,11 +1,11 @@
-require 'validator'
+require 'thummim'
 class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
 
     @demographics = @contact.demographics
     @primary_photo = @contact.primary_photo
-    @permutator = Permutator.find(@contact.permutator_id)
+    @umim = Umim.find(@contact.umim_id)
     @by_email = params[:by_email]
   end
 
@@ -38,6 +38,6 @@ class ContactsController < ApplicationController
   end
 
   def find_info(email)
-    Validator.new.find_contact(email)
+    Thummim.new.find_contact(email)
   end
 end

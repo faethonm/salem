@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
 
-  resources :permutators do
+  resources :umims do
     member do
       post :fullcontact_information_received
     end

@@ -6,7 +6,7 @@ class Contact < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX }
 
-  has_one :permutator
+  has_one :umim
 
   def validate_social_information(information)
     info_hash = {}

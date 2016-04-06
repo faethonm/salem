@@ -17,6 +17,7 @@ gem 'devise'
 gem 'faye'
 gem 'thin', require: false
 gem 'sync'
+gem 'figaro'
   
 group :development do
   gem 'web-console', '~> 2.0'

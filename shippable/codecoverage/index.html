@@ -91,7 +91,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#c051df7e83c31264bf30c987847b93c326562318" class="src_link" title="app/models/permutator.rb">app/models/permutator.rb</a></td>
+        <td class="strong"><a href="#c051df7e83c31264bf30c987847b93c326562318" class="src_link" title="app/models/Umim.rb">app/models/Umim.rb</a></td>
         <td class="red strong">43.75 %</td>
         <td>104</td>
         <td>32</td>
@@ -101,7 +101,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#4c5f822a76095183ab5c2c61948cb380eab5ef47" class="src_link" title="lib/validator.rb">lib/validator.rb</a></td>
+        <td class="strong"><a href="#4c5f822a76095183ab5c2c61948cb380eab5ef47" class="src_link" title="lib/Thummim.rb">lib/Thummim.rb</a></td>
         <td class="red strong">26.67 %</td>
         <td>31</td>
         <td>15</td>
@@ -159,7 +159,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#c051df7e83c31264bf30c987847b93c326562318" class="src_link" title="app/models/permutator.rb">app/models/permutator.rb</a></td>
+        <td class="strong"><a href="#c051df7e83c31264bf30c987847b93c326562318" class="src_link" title="app/models/Umim.rb">app/models/Umim.rb</a></td>
         <td class="red strong">43.75 %</td>
         <td>104</td>
         <td>32</td>
@@ -421,7 +421,7 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#4c5f822a76095183ab5c2c61948cb380eab5ef47" class="src_link" title="lib/validator.rb">lib/validator.rb</a></td>
+        <td class="strong"><a href="#4c5f822a76095183ab5c2c61948cb380eab5ef47" class="src_link" title="lib/Thummim.rb">lib/Thummim.rb</a></td>
         <td class="red strong">26.67 %</td>
         <td>31</td>
         <td>15</td>
@@ -510,7 +510,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">require &#39;validator&#39;</code>
+          <code class="ruby">require &#39;Thummim&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
@@ -552,7 +552,7 @@
         <li class="missed" data-hits="0" data-linenumber="8">
           
           
-          <code class="ruby">    @permutator = Permutator.find(@contact.permutator_id)</code>
+          <code class="ruby">    @Umim = Umim.find(@contact.Umim_id)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="9">
@@ -750,7 +750,7 @@
         <li class="missed" data-hits="0" data-linenumber="41">
           
           
-          <code class="ruby">    Validator.new.find_contact(email)</code>
+          <code class="ruby">    Thummim.new.find_contact(email)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
@@ -882,7 +882,7 @@
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_one :permutator</code>
+          <code class="ruby">  has_one :Umim</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -1011,7 +1011,7 @@
       
         <div class="source_table" id="c051df7e83c31264bf30c987847b93c326562318">
   <div class="header">
-    <h3>app/models/permutator.rb</h3>
+    <h3>app/models/Umim.rb</h3>
     <h4><span class="red">43.75 %</span> covered</h4>
     <div>
       <b>32</b> relevant lines. 
@@ -1026,7 +1026,7 @@
         <li class="covered" data-hits="1" data-linenumber="1">
           <span class="hits">1</span>
           
-          <code class="ruby">class Permutator &lt; ActiveRecord::Base</code>
+          <code class="ruby">class Umim &lt; ActiveRecord::Base</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="2">
@@ -1653,7 +1653,7 @@
       
         <div class="source_table" id="4c5f822a76095183ab5c2c61948cb380eab5ef47">
   <div class="header">
-    <h3>lib/validator.rb</h3>
+    <h3>lib/Thummim.rb</h3>
     <h4><span class="red">26.67 %</span> covered</h4>
     <div>
       <b>15</b> relevant lines. 
@@ -1680,13 +1680,13 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">class Validator</code>
+          <code class="ruby">class Thummim</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  def find_valid_emails(emails, permutator)</code>
+          <code class="ruby">  def find_valid_emails(emails, Umim)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -1698,7 +1698,7 @@
         <li class="missed" data-hits="0" data-linenumber="6">
           
           
-          <code class="ruby">    webhook_url = &quot;http://df6955b2.ngrok.io/permutators/#{permutator.id}/fullcontact_information_received&quot;</code>
+          <code class="ruby">    webhook_url = &quot;http://df6955b2.ngrok.io/Umims/#{Umim.id}/fullcontact_information_received&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="7">
@@ -1770,7 +1770,7 @@
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">        #   valid_email = permutator.valid_emails.create(email: email, information: result)</code>
+          <code class="ruby">        #   valid_email = Umim.valid_emails.create(email: email, information: result)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">

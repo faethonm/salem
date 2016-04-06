@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 20160405001310) do
     t.string   "primary_photo"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "permutator_id"
+    t.integer  "umim_id"
   end
 
-  add_index "contacts", ["permutator_id"], name: "index_contacts_on_permutator_id"
+  add_index "contacts", ["umim_id"], name: "index_contacts_on_umim_id"
 
-  create_table "permutators", force: :cascade do |t|
+  create_table "umims", force: :cascade do |t|
     t.string   "first_name"
     t.string   "middle_name"
     t.string   "last_name"

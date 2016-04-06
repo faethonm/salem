@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Permutator, type: :model do
-  before { @permutator = FactoryGirl.build(:permutator) }
+RSpec.describe Umim, type: :model do
+  before { @umim = FactoryGirl.build(:umim) }
 
-  subject { @permutator }
+  subject { @umim }
 
   it { should respond_to(:first_name) }
   it { should respond_to(:middle_name) }

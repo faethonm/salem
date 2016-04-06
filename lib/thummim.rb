@@ -1,9 +1,9 @@
 require 'fullcontact'
 
-class Validator
-  def find_valid_emails(emails, permutator)
+class Thummim
+  def find_valid_emails(emails, umim)
     # valid_emails = []
-    webhook_url = "http://df6955b2.ngrok.io/permutators/#{permutator.id}/fullcontact_information_received"
+    webhook_url = "#{ENV['webhook_url']}/umims/#{umim.id}/fullcontact_information_received"
     puts webhook_url
     results = []
     emails.each do |email|
@@ -15,7 +15,7 @@ class Validator
         #   puts 'Please wait for 2 minutes and try again'
         # else
         #   puts "#{email} valid"
-        #   valid_email = permutator.valid_emails.create(email: email, information: result)
+        #   valid_email = Umim.valid_emails.create(email: email, information: result)
         #   valid_emails.push(valid_email) if valid_email.information.likelihood >= 0.85
         # end
       rescue FullContact::NotFound
@@ -26,6 +26,6 @@ class Validator
   end
 
   def find_contact(email)
-    FullContact.person(email: email, style: 'dictionary')
+    FullContact.person(email: email, format: 'json')
   end
 end

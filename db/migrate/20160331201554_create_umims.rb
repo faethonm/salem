@@ -1,6 +1,6 @@
-class CreatePermutators < ActiveRecord::Migration
+class CreateUmims < ActiveRecord::Migration
   def change
-    create_table :permutators do |t|
+    create_table :umims do |t|
       t.string :first_name
       t.string :middle_name
       t.string :last_name

@@ -1,4 +1,4 @@
-class Permutator < ActiveRecord::Base
+class Umim < ActiveRecord::Base
   has_many :contacts, dependent: :destroy
 
   validates :first_name, presence: true

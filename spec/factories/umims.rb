@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :permutator do
+  factory :Umim do
     first_name { 'Faethon' }
     middle_name {}
     last_name { 'Milikouris' }
