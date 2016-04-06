@@ -1,2 +1,7 @@
-"./app/models/permutator.rb",44,112,32,14,18
-"./lib/validator.rb",33,31,15,5,10
+File,% covered,Lines,Relevant Lines,Lines covered,Lines missed
+"./app/controllers/application_controller.rb",100,5,2,2,0
+"./app/controllers/contacts_controller.rb",31,43,26,8,18
+"./app/controllers/home_controller.rb",100,5,3,3,0
+"./app/models/contact.rb",50,29,18,9,9
+"./app/models/permutator.rb",44,104,32,14,18
+"./lib/validator.rb",27,31,15,4,11

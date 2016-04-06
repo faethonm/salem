@@ -1,7 +1,7 @@
 require 'fullcontact'
 
 class Validator
-  def find_valid_emails(emails,permutator)
+  def find_valid_emails(emails, permutator)
     # valid_emails = []
     webhook_url = "http://df6955b2.ngrok.io/permutators/#{permutator.id}/fullcontact_information_received"
     puts webhook_url

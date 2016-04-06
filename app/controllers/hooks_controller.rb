@@ -1,4 +1,0 @@
-class HooksController < ApplicationController
-
-  
-end

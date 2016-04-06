@@ -13,7 +13,6 @@ class Permutator < ActiveRecord::Base
     @fi = @fn.split('').first
     @li = @ln.split('').first
     @results = append_domain(emails)
-    
   end
 
   private
@@ -28,7 +27,6 @@ class Permutator < ActiveRecord::Base
 
   def emails
     simple + basics
-    # basics
   end
 
   def simple

@@ -17,5 +17,5 @@
 /tmp
 
 #ignore coverage
-coverage
 .byebug_history
+/shippable

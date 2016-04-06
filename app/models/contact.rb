@@ -19,11 +19,11 @@ class Contact < ActiveRecord::Base
         photo: photo && photo.first['url']
       }
     end
-    info_hash[:primary_photo] = information['photos'] && information['photos'].find{|p| p['isPrimary']}['url']
+    info_hash[:primary_photo] = information['photos'] && information['photos'].find { |p| p['isPrimary'] }['url']
     info_hash
   end
 
   def type_photos(information)
-    information['photos'] && information['photos'].group_by{|t| t['typeId']}
+    information['photos'] && information['photos'].group_by { |t| t['typeId'] }
   end
 end

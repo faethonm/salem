@@ -15,7 +15,7 @@ class PermutatorsController < ApplicationController
     if @permutator.save
       results = @permutator.generate_emails(permutator_params)
       validator = Validator.new
-      validator.find_valid_emails(results,@permutator)
+      validator.find_valid_emails(results, @permutator)
       redirect_to @permutator
     else
       render 'new'
