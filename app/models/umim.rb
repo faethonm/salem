@@ -20,8 +20,10 @@ class Umim < ActiveRecord::Base
   def append_domain(list)
     if @dom.present?
       list.map { |email| email + "@#{@dom}" }
-    else
+    elsif @company.present?
       list.map { |email| email + "@#{@company}.com" }
+    else
+      list.map { |email| email + "@gmail.com" }
     end
   end
 

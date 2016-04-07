@@ -25,7 +25,7 @@ class UmimsController < ApplicationController
     result = params['result']
     email = params['webhookId']
     @umim = Umim.find(params['id'])
-    if result['status'] != 404
+    if result['status'] == 200
       @contact = Contact.new
       info_hash = @contact.validate_social_information(result)
       info_params = info_hash.merge!(

@@ -1,14 +1,10 @@
 <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <h1 class="header center purple-text text-lighten-2">Salem</h1>
-      <div class="row center">
-        <h5 class="header col s12 light"><%= pluralize((@searches || 0),'email' )%>  searched so far </h5>
-
-      </div>
+    <div class="container amber-text text-darken-3">
+      <%= render 'layouts/ask_salem' %>
       <div class="row center">
         <div class="col-s12 offset-s3">
-          <%= link_to 'Stalk using email' ,new_contact_path, id: 'usingEmail',class: "btn-large waves-effect waves-light purple lighten-2" %>
-          <%= link_to 'Stalk using personal info' ,new_umim_path,class: "btn-large waves-effect waves-light purple lighten-2" %>
+          <%= link_to 'Ask with email' ,new_contact_path, id: 'usingEmail',class: "btn-large waves-effect waves-light amber darken-3" %>
+          <%= link_to 'Ask with personal info' ,new_umim_path,class: "btn-large waves-effect waves-light amber darken-3" %>
         </div>
       </div>
     </div>

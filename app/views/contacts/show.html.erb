@@ -1,10 +1,10 @@
-<h3 class="purple-text text-lighten 3"><%= @contact.email %></h3>
+<h3 class="amber-text text-darken-3 ">Showing answers for <%= @contact.email %></h3>
 
-<% unless @by_email %>
-  <%= link_to "Back", @umim, class: "btn-large waves-effect waves-light purple lighten-2" %>
-<% end %>
+
 <%= render partial: 'shared/contact' %>
-
+<% unless @by_email %>
+  <%= link_to "Back", @umim, class: "btn-large waves-effect waves-light amber" %>
+<% end %>
 
 
 

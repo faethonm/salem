@@ -2,7 +2,7 @@
   <%= image_tag(social_profile[:photo], alt: 'no image', class:"circle") %>
   <span class="title"><%= social_profile[:social_profile]['type'] %></span>
   <p><%= social_profile[:social_profile]['username'] %> <br>
-     <%=social_profile[:social_profile]['url']%>
+     <%= link_to social_profile[:social_profile]['url'],social_profile[:social_profile]['url']%>
   </p>
   <%= link_to social_profile[:social_profile]['url'],class: "secondary-content" do %>
     <i class="material-icons">input</i>
