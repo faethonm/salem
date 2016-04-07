@@ -18,6 +18,7 @@ gem 'faye'
 gem 'thin', require: false
 gem 'sync'
 gem 'figaro'
+gem 'rails_12factor'
   
 group :development do
   gem 'web-console', '~> 2.0'
