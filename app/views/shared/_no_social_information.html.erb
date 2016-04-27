@@ -1,5 +1,38 @@
-<div class="card">
-  <div class="card-content ">
-    <p class="red-text">I am really sorry but it looks like that email is off the grid! Please try a different one and I will do my best!</p>
+<div class="row center">
+  <%= image_tag 'diamond.png',size: '200' %>
+</div>
+<div class="row">
+  <div class="card col s6 offset-s3">
+    <div class="card-content pink-text text-darken-4">
+      <p>Sorry, looks like no social information can be found for <%=@contact.email %>.</p>
+      <p>Please try again later or try another email</p>
+      <div class="row center">
+      <div class="row center">
+  <div class="card">
+    <div class="col s6 offset-s3">
+      <%= form_for(Contact.new) do |f| %>
+        <div class="row">
+          <%= render 'shared/error_messages', object: f.object %>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <%= f.submit "Search", class: "btn waves-effect waves-light pink darken-4" %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+
+    </div>
   </div>
 </div>

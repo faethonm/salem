@@ -5,7 +5,6 @@ class ContactsController < ApplicationController
 
     @demographics = @contact.demographics
     @primary_photo = @contact.primary_photo
-    @umim = Umim.find(@contact.umim_id)
     @by_email = params[:by_email]
   end
 
@@ -20,9 +19,14 @@ class ContactsController < ApplicationController
       redirect_to contact_path(@contact, by_email: true)
       return
     else
-      @contact = Contact.new
-      contact_params = { email: contact_params[:email] }.merge(@contact.validate_social_information(generated_info))
-      @contact.update_attributes(contact_params)
+      if generated_info
+        @contact = Contact.new
+        valid_info = @contact.validate_social_information(generated_info)
+        params_with_info = { email: contact_params[:email] }.merge(valid_info)
+        @contact.update_attributes(params_with_info)
+      else
+        @contact = Contact.new(contact_params)
+      end
       if @contact.save
         redirect_to contact_path(@contact, by_email: true)
       else

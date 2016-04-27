@@ -1,15 +1,18 @@
-<div class="row">
+
   <% if @contact.contact_info %>
-    <div id="test1" class="col s12">
-      <%= sync partial: 'contact_info', resource: @contact %>
+  <div class="row">
+    <div id="test1" class="col s8 offset-s2">
+      <%= render 'shared/contact_info' %>
     </div>
-    <div id="test2" class="col s12">
+    </div>
+
+    <div id="test2" class="col s8 offset-s2">
       <div class="card">
         <div class="card-content ">
-          <span class="card-title">Social Information</span>
+          <span class="card-title pink-text text-darken-4">Social Presence</span>
           <ul class="collection">
             <% @contact.social_profiles.each do |social_profile| %>
-              <%= render partial:'social_profile' ,locals: {social_profile: social_profile} %>
+              <%= render partial: 'shared/social_profile' ,locals: {social_profile: social_profile} %>
             <% end %>
           </ul>
         </div>

@@ -17,3 +17,11 @@
 //= require sync
 //= require_tree .
 
+
+var ready = function() {
+  $(".button-collapse").sideNav();
+  $('.parallax').parallax();
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

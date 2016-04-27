@@ -5,13 +5,16 @@ class Thummim
     # valid_emails = []
     webhook_url = "#{ENV['webhook_url']}/umims/#{umim.id}/fullcontact_information_received"
     emails.each do |email|
-      sleep 0.5
       find_result(email, webhook_url)
     end
   end
 
   def find_contact(email)
-    FullContact.person(email: email, format: 'json')
+    begin
+      FullContact.person(email: email, format: 'json').to_snake_keys
+      rescue
+        nil
+      end
   end
 
   def find_result(email, webhook_url)

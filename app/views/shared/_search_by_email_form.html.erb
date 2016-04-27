@@ -1,15 +1,23 @@
-<%= form_for(@contact) do |f| %>
-  <div class="row">
-    <%= render 'shared/error_messages', object: f.object %>
-  </div>
-  <div class="row">
-    <div class="input-field col s6 offset-s3">
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+<div class="row center">
+  <div class="card">
+    <div class="col s6 offset-s3">
+      <%= form_for(@contact) do |f| %>
+        <div class="row">
+          <%= render 'shared/error_messages', object: f.object %>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field">
+            <%= f.submit "Search", class: "btn waves-effect waves-light white  pink-text text-darken-4" %>
+          </div>
+        </div>
+      <% end %>
+      </div>
     </div>
   </div>
-  <div>
-    <%= link_to "Back", root_url, class: "btn-large waves-effect waves-light amber darken-3" %>
-    <%= f.submit "Search", class: "btn-large waves-effect waves-light amber darken-3" %>
-  </div>
-<% end %>
+</div>
