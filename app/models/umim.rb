@@ -23,7 +23,7 @@ class Umim < ActiveRecord::Base
     elsif @company.present?
       list.map { |email| email + "@#{@company}.com" }
     else
-      list.map { |email| email + "@gmail.com" }
+      list.map { |email| email + '@gmail.com' }
     end
   end
 

@@ -10,18 +10,16 @@ class Thummim
   end
 
   def find_contact(email)
-    begin
-      FullContact.person(email: email, format: 'json').to_snake_keys
-      rescue
-        nil
-      end
+    FullContact.person(email: email, format: 'json').to_snake_keys
+  rescue
+    nil
   end
 
   def find_result(email, webhook_url)
     FullContact.person(email: email,
-      webhookBody: 'json',
-      webhookUrl: webhook_url,
-      webhookId: email
-    )
+                       webhookBody: 'json',
+                       webhookUrl: webhook_url,
+                       webhookId: email
+                      )
   end
 end
