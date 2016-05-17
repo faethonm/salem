@@ -1,22 +1,21 @@
 <div class="row">
-    <div class="col s12">
-      <div class="card ">
-        <div class="card-content row">
-
-          <div class="card-image s12 l3 col right">
-          <%= image_tag @contact.primary_photo, class: "align-right circle"%>
-          </div>
-          <div class=" s12 l9 col">
-          <div class="card-title pink-text text-darken-4">
-            <%= @contact.contact_info[:full_name]%>
-          </div>
-            <label> Email: </label><%= @contact.email%><br>
-            <% if @contact.demographics %>
-              <label> Gender: </label><%= @contact.demographics[:gender] %><br>
-              <label> Location: </label><%= (@contact.demographics[:location_deduced] && @contact.demographics[:location_deduced][:deduced_location]) || @contact.demographics[:location_general]%><br>
-              <%end %>
-          </ul>
+  <div class="card ">
+    <div class="card-content row">
+      <% if @contact.primary_photo.present? %>
+        <div class="card-image s12 l3 col right">
+        <%= image_tag @contact.primary_photo, class: "align-right circle"%>
         </div>
+      <% end %>
+      <div class=" s12 l9 col">
+      <div class="card-title pink-text text-darken-4">
+        <%= @contact.contact_info[:full_name]%>
       </div>
+        <label> Email: </label><%= @contact.email%><br>
+        <% if @contact.demographics %>
+          <label> Gender: </label><%= @contact.demographics[:gender] %><br>
+          <label> Location: </label><%= (@contact.demographics[:location_deduced] && @contact.demographics[:location_deduced][:deduced_location]) || @contact.demographics[:location_general]%><br>
+          <%end %>
+      </ul>
     </div>
   </div>
+</div>

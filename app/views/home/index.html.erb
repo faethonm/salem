@@ -1,20 +1,24 @@
-<div class="section no-pad-bot" id="index-banner">
-    <div class="container white-text">
-      <div class="container">
-        <div class="row center">
-          <%= image_tag 'diamond.png',size: '200' %>
-        </div>
-        <div class="row center">
-          <h2 class="header center "> Salem</h2>
-          <h5 class="header col s12 light">Discover your social presence</h5>
-          <h6 class="header col s12 light"><%= pluralize((@searches || 0),'email' )%>  searched so far </h6>
-        </div>
+<div class="section">
+  <div class="container white-text">
+    <div class="row ">
+      <div class="col s12 m12 center">
+        <%= image_tag 'diamond.png',size: '200' %>
       </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 center">
+          <h2 class="header center "> Salem</h2>
+          <h5 class="header light">Discover your social presence</h5>
+          <h6 class="header light"><%= pluralize((@searches || 0),'email' )%>  searched so far </h6>
+        </div>
+    </div>
 
-      <div class="row center">
-      <%= render 'shared/search_by_email_form' %>
+    <div class="row">
+      <div class="col s12 m12 center">
+    <%= render 'shared/search_by_email_form' %>
       </div>
     </div>
   </div>
+</div>
 
-  
+

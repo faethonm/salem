@@ -6,6 +6,7 @@
                                            'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= include_sync_config %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
@@ -13,9 +14,7 @@
   <body class="pink darken-4">
     <%= render 'layouts/header' %>
     <main >
-      <div class="container">
-        <%= yield %>
-      </div>
+      <%= yield %>
     </main>
     <%= render 'layouts/footer' %>
   </body>
