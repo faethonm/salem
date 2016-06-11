@@ -2,9 +2,9 @@
   <%= image_tag 'diamond.png',size: '200' %>
 </div>
 <div class="row">
-  <div class="card col s6 offset-s3">
-    <div class="card-content pink-text text-darken-4">
-      <p>Sorry, looks like no social information can be found for <%=@contact.email %>.</p>
+  <div class="card col s12 l6 offset-l3">
+    <div class="card-content pink-text text-darken-4 center">
+      <p >Sorry, looks like no social information can be found for <%=@contact.email %>.</p>
       <p>Please try again later or try another email</p>
       <div class="row center">
       <div class="row center">
@@ -17,7 +17,7 @@
         <div class="row">
           <div class="input-field">
             <%= f.label :email %>
-            <%= f.email_field :email %>
+            <%= f.email_field :email, required: true, class: 'validate' %>
           </div>
         </div>
         <div class="row">

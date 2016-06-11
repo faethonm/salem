@@ -30,7 +30,7 @@ class ContactsController < ApplicationController
       if @contact.save
         redirect_to contact_path(@contact, by_email: true)
       else
-        render 'new'
+        redirect_to root_url
       end
     end
   end
